@@ -1,0 +1,21 @@
+{
+  "name": "basic",
+  "description": "Main navigation module",
+  "buttons": [
+    {
+      "text": "⚙️ Settings",
+      "callback_data": "module_settings",
+      "row": 0
+    },
+    {
+      "text": "💳 Transactions",
+      "callback_data": "module_transactions",
+      "row": 0
+    },
+    {
+      "text": "📦 Subscriptions",
+      "callback_data": "module_subscriptions",
+      "row": 1
+    }
+  ]
+}

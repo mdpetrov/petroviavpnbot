@@ -1,0 +1,26 @@
+{
+  "name": "transactions",
+  "description": "User transactions module",
+  "buttons": [
+    {
+      "text": "📋 View All Transactions",
+      "callback_data": "transactions_view_all",
+      "row": 0
+    },
+    {
+      "text": "🔍 Search Transaction",
+      "callback_data": "transactions_search",
+      "row": 0
+    },
+    {
+      "text": "📊 Transaction Statistics",
+      "callback_data": "transactions_stats",
+      "row": 1
+    },
+    {
+      "text": "◀️ Back to Main",
+      "callback_data": "module_basic",
+      "row": 2
+    }
+  ]
+}

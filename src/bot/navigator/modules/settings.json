@@ -1,0 +1,26 @@
+{
+  "name": "settings",
+  "description": "User settings module",
+  "buttons": [
+    {
+      "text": "👤 Profile",
+      "callback_data": "settings_profile",
+      "row": 0
+    },
+    {
+      "text": "🔔 Notifications",
+      "callback_data": "settings_notifications",
+      "row": 0
+    },
+    {
+      "text": "🔒 Security",
+      "callback_data": "settings_security",
+      "row": 1
+    },
+    {
+      "text": "◀️ Back to Main",
+      "callback_data": "module_basic",
+      "row": 2
+    }
+  ]
+}
