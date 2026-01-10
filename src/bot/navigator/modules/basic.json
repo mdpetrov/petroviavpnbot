@@ -3,19 +3,19 @@
   "description": "Main navigation module",
   "buttons": [
     {
+      "text": "🔑 Keys Management",
+      "callback_data": "module_keys",
+      "row": 0
+    },
+    {
       "text": "💳 Transactions",
       "callback_data": "module_transactions",
       "row": 0
     },
     {
-      "text": "📦 Subscriptions",
-      "callback_data": "module_subscriptions",
+      "text": "⚙️ Settings",
+      "callback_data": "module_settings",
       "row": 1
-    },
-    {
-        "text": "⚙️ Settings",
-        "callback_data": "module_settings",
-        "row": 2
     }
   ]
 }

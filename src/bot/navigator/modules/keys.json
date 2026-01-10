@@ -1,0 +1,26 @@
+{
+  "name": "keys",
+  "description": "User keys management module",
+  "buttons": [
+    {
+      "text": "🔑 Active Keys",
+      "callback_data": "keys_view",
+      "row": 0
+    },
+    {
+      "text": "➕ Add New Key",
+      "callback_data": "keys_new",
+      "row": 0
+    },
+    {
+      "text": "🔁 Revoke Key",
+      "callback_data": "keys_revoke",
+      "row": 1
+    },
+    {
+      "text": "◀️ Back to Main",
+      "callback_data": "module_basic",
+      "row": 2
+    }
+  ]
+}

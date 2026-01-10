@@ -45,8 +45,8 @@ Available commands:
 /help - Show this help message
 
 Use the inline buttons to navigate through:
-• ⚙️ Settings - Manage your account settings
+• 🔑 Keys Management - Manage your VPN keys
 • 💳 Transactions - View your payment transactions
-• 📦 Subscriptions - Manage your VPN subscriptions
+• ⚙️ Settings - Manage your account settings
 """
     await update.message.reply_text(help_text)
