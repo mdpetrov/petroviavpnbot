@@ -25,6 +25,8 @@ def main() -> None:
     modules_dir = Path(__file__).parent / "navigator" / "modules"
     navigator = VPNBotNavigator(modules_dir)
     
+    # Restrain httpx logging
+    logging.getLogger("httpx").setLevel(logging.WARNING)
     # Create application
     application = Application.builder().token(BOT_TOKEN).build()
     
