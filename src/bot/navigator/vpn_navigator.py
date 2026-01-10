@@ -42,11 +42,20 @@ class VPNBotNavigator(BotNavigator):
                     text="❌ Module not found"
                 )
         
-        # Handle specific callbacks (to be implemented)
-        else:
-            await query.edit_message_text(
-                text=f"Callback: {callback_data}\n\nThis feature is under development."
-            )
+        # Handle specific callbacks
+        handlers = {
+            "keys_view": self.handle_keys_view,
+            "keys_new": self.handle_keys_new,
+            "keys_revoke": self.handle_keys_revoke,
+        }
+        handler = handlers.get(callback_data)
+        if handler:
+            await handler(update, context)
+            return
+
+        await query.edit_message_text(
+            text=f"Callback: {callback_data}\n\nThis feature is under development."
+        )
     
     async def handle_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         """Handle commands from users."""
@@ -59,4 +68,50 @@ class VPNBotNavigator(BotNavigator):
             username=user.username or "",
             first_name=user.first_name or "",
             last_name=user.last_name or ""
+        )
+    
+    async def handle_keys_view(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Handle keys view command."""
+        user = update.effective_user
+        user_repo = UserRepo()
+        user_repo.get_or_create(
+            user_id=user.id,
+            username=user.username or "",
+            first_name=user.first_name or "",
+            last_name=user.last_name or ""
+        )
+        # keys = user_repo.get_keys(user_id=user.id)
+        # await update.message.reply_text(
+        #     text=f"🔑 Active Keys:\n\n{keys}"
+        # )
+        await update.message.reply_text(
+            text="🔑 Active Keys:\n\nUnder development."
+        )
+    
+    async def handle_keys_new(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Handle keys new command."""
+        user = update.effective_user
+        user_repo = UserRepo()
+        user_repo.get_or_create(
+            user_id=user.id,
+            username=user.username or "",
+            first_name=user.first_name or "",
+            last_name=user.last_name or ""
+        )
+        await update.message.reply_text(
+            text="🔑 Add New Key:\n\nUnder development."
+        )
+    
+    async def handle_keys_revoke(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+        """Handle keys revoke command."""
+        user = update.effective_user
+        user_repo = UserRepo()
+        user_repo.get_or_create(
+            user_id=user.id,
+            username=user.username or "",
+            first_name=user.first_name or "",
+            last_name=user.last_name or ""
+        )
+        await update.message.reply_text(
+            text="🔑 Revoke Key:\n\nUnder development."
         )
